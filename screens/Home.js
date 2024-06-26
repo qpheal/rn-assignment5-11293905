@@ -11,8 +11,6 @@ import {
 import React, { useContext } from "react";
 import themeContext from "../theme/themeContext";
 import { AntDesign } from "@expo/vector-icons";
-import transaction from "../components/Transaction";
-import Footer from "../components/footer";
 
 const transactions = [
   {
@@ -20,16 +18,14 @@ const transactions = [
     company: "Apple Store",
     industry: "Entertainment",
     amount: "- $5,99",
-    logo: require("../assets/apple.png"), 
-   
+    logo: require("../assets/apple.png"),
   },
   {
     id: "2",
     company: "Spotify",
     industry: "Music",
     amount: "- $12,99",
-    logo: require("../assets/spotify.png"), 
-  
+    logo: require("../assets/spotify.png"),
   },
   {
     id: "3",
@@ -44,8 +40,22 @@ const transactions = [
     company: "Grocery",
     industry: "Sales",
     amount: "- $88",
-    logo: require("../assets/grocery.png"), 
-    
+    logo: require("../assets/grocery.png"),
+  },
+  {
+    id: "5",
+    company: "Money Transfer",
+    industry: "Transaction",
+    amount: "$300",
+    logo: require("../assets/apple.png"),
+    amountColor: "#00f",
+  },
+  {
+    id: "6",
+    company: "Grocery",
+    industry: "Sales",
+    amount: "- $88",
+    logo: require("../assets/grocery.png"),
   },
 ];
 
@@ -115,87 +125,112 @@ const HomeScreen = () => {
               marginTop: -5,
             }}
           >
-            <View
-              style={{ flexDirection: "column", gap: 10, alignItems: "center" }}
-            >
+            <TouchableOpacity>
               <View
                 style={{
-                  width: 60,
-                  height: 60,
-                  backgroundColor: "#f3f3f3",
-                  borderRadius: 50,
-                  justifyContent: "center",
+                  flexDirection: "column",
+                  gap: 10,
                   alignItems: "center",
                 }}
               >
-                <Image
-                  source={require("../assets/send.png")}
-                  style={{ color: "white" }}
-                />
+                <View
+                  style={{
+                    width: 60,
+                    height: 60,
+                    backgroundColor: "#f3f3f3",
+                    borderRadius: 50,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image
+                    source={require("../assets/send.png")}
+                    style={{ color: "white" }}
+                  />
+                </View>
+                <Text style={{ color: theme.color }}>Send</Text>
               </View>
-              <Text style={{color:theme.color}}>Send</Text>
-            </View>
+            </TouchableOpacity>
 
-            <View
-              style={{ flexDirection: "column", gap: 10, alignItems: "center" }}
-            >
+            <TouchableOpacity>
+              {" "}
               <View
                 style={{
-                  width: 60,
-                  height: 60,
-                  backgroundColor: "#f3f3f3",
-                  borderRadius: 50,
-                  justifyContent: "center",
+                  flexDirection: "column",
+                  gap: 10,
                   alignItems: "center",
                 }}
               >
-                <Image source={require("../assets/recieve.png")} style={{}} />
+                <View
+                  style={{
+                    width: 60,
+                    height: 60,
+                    backgroundColor: "#f3f3f3",
+                    borderRadius: 50,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image source={require("../assets/recieve.png")} />
+                </View>
+                <Text style={{ color: theme.color }}>Recieve</Text>
               </View>
-              <Text style={{color:theme.color}}>Recieve</Text>
-            </View>
+            </TouchableOpacity>
 
-            <View
-              style={{ flexDirection: "column", gap: 10, alignItems: "center" }}
-            >
+            <TouchableOpacity>
               <View
                 style={{
-                  width: 60,
-                  height: 60,
-                  backgroundColor: "#f3f3f3",
-                  borderRadius: 50,
-                  justifyContent: "center",
+                  flexDirection: "column",
+                  gap: 10,
                   alignItems: "center",
                 }}
               >
-                <Image source={require("../assets/loan.png")} style={{}} />
+                <View
+                  style={{
+                    width: 60,
+                    height: 60,
+                    backgroundColor: "#f3f3f3",
+                    borderRadius: 50,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image source={require("../assets/loan.png")} style={{}} />
+                </View>
+                <Text style={{ color: theme.color }}>Loan</Text>
               </View>
-              <Text style={{color:theme.color}}>Loan</Text>
-            </View>
+            </TouchableOpacity>
 
-            <View
-              style={{ flexDirection: "column", gap: 10, alignItems: "center" }}
-            >
+            <TouchableOpacity>
               <View
                 style={{
-                  width: 60,
-                  height: 60,
-                  backgroundColor: "#f3f3f3",
-                  borderRadius: 50,
-                  justifyContent: "center",
+                  flexDirection: "column",
+                  gap: 10,
                   alignItems: "center",
                 }}
               >
-                <Image source={require("../assets/topUp.png")} style={{}} />
+                <View
+                  style={{
+                    width: 60,
+                    height: 60,
+                    backgroundColor: "#f3f3f3",
+                    borderRadius: 50,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image source={require("../assets/topUp.png")} style={{}} />
+                </View>
+                <Text style={{ color: theme.color }}>TopUp</Text>
               </View>
-              <Text style={{color:theme.color}}>TopUp</Text>
-            </View>
+            </TouchableOpacity>
           </View>
 
           <View
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
-              alignItems: 'center',
+              alignItems: "center",
               marginHorizontal: 5,
             }}
           >
@@ -204,7 +239,10 @@ const HomeScreen = () => {
             >
               Transaction
             </Text>
-           <TouchableOpacity> <Text style={{ color: "#037bfc" }}>See All</Text></TouchableOpacity>
+            <TouchableOpacity>
+              {" "}
+              <Text style={{ color: "#037bfc" }}>See All</Text>
+            </TouchableOpacity>
           </View>
 
           {transactions.map((item) => (
@@ -267,7 +305,6 @@ const HomeScreen = () => {
           ))}
         </View>
       </ScrollView>
-   
     </SafeAreaView>
   );
 };
