@@ -47,22 +47,21 @@ export default function App() {
                 case "Settings":
                   iconName = require("./assets/settings.png");
                   break;
-                
-                 
+
                 default:
                   break;
               }
               return (
                 <Image source={iconName} style={{ width: 24, height: 24 }} />
               );
-            }, 
+            },
           })}
         >
-          <Tab.Screen name="Settings" component={Settings} />
           <Tab.Screen name="HomeScreen" component={HomeScreen} />
           <Tab.Screen name="MyCard" component={MyCard} />
 
           <Tab.Screen name="Statistics" component={Statistics} />
+          <Tab.Screen name="Settings" component={Settings} />
         </Tab.Navigator>
       </NavigationContainer>
     </themeContext.Provider>

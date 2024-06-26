@@ -102,16 +102,18 @@ const HomeScreen = () => {
                 </Text>
               </View>
             </View>
-            <AntDesign
-              name="search1"
-              size={24}
-              color="black"
-              style={{
-                backgroundColor: "#e8e3d5",
-                borderRadius: 50,
-                padding: 10,
-              }}
-            />
+            <TouchableOpacity>
+              <AntDesign
+                name="search1"
+                size={24}
+                color="black"
+                style={{
+                  backgroundColor: "#e8e3d5",
+                  borderRadius: 50,
+                  padding: 10,
+                }}
+              />
+            </TouchableOpacity>
           </View>
 
           <View style={{ alignItems: "center", marginTop: 0 }}>
